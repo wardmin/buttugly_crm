@@ -1,8 +1,13 @@
 class ContactsController < ApplicationController
 	before_action :load_contact, only: [:show, :edit, :update, :destroy]
+	before_action :ensure_logged_in
 
 	def index
-		@contacts = Contact.new 
+		@contacts = current_user.contacts.all
+		
+		if @contacts.empty?
+			redirect_to new_contact_path
+		end
 	end
 
 	def show	
@@ -12,10 +17,9 @@ class ContactsController < ApplicationController
 		@contact = Contact.new
 	end
 
-	
-
 	def create
 		@contact = Contact.new(contact_params)
+		@contact.user_id = current_user.id 
 
 		if @contact.save
 			redirect_to contacts_path
@@ -29,7 +33,7 @@ class ContactsController < ApplicationController
 
 	def update
 		if @contact.update(contact_params)
-			redirect_to contact_path
+			redirect_to contacts_path
 		else
 			render :edit
 		end

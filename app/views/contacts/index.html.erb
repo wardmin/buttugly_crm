@@ -1,0 +1,10 @@
+<h1><%= current_user.name %>'s Contacts ## Index</h1>
+
+
+<% @contacts.each do |contact| %>
+	<p><%= link_to contact do %>
+		<strong><%= contact.name %></strong><br />
+	<% end %>
+<% end %>
+
+<p>Create a <%= link_to "New Contact", new_contact_path  %></p>

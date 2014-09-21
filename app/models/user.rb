@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_secure_password
- 	
+ 	has_many :contacts
 	# attr_accessor :password_confirmation, :password
 	# validates :password, :confirmation => true
 

@@ -1,10 +1,15 @@
 
 <%= link_to "Back to Contacts", contacts_path %>
 
-<h1>Your Profile Page</h1>
-<h3>Name: <%= @user.name %></h3><br />
+<div class="subhead"><h1>Your Profile Page</h1></div>
+<section>
+	<ul>
+		<li><p class="contact_view">Name: <%= @user.name %></p></li>
 
-email: <%= @user.email %><br />
+		<li><p class="contact_view">email: <%= @user.email %></p></li>
 
-<p><%= link_to 'Edit your profile and change your password', edit_user_path %></p>
+		<li><%= link_to 'Account Settings', edit_user_path %></li>
+	</ul>
+</section>
+
 

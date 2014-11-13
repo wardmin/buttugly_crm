@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_logged_in, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_logged_in, except: [:new, :create]
 
   def new
   	@user = User.new
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-  		redirect_to contacts_url, notice: "Signed up!"
+  		redirect_to new_contact_path, notice: "Signed up!"
   	else
   		render "new"
   	end
@@ -21,11 +21,18 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def update  
-    redirect_to user_url
+  def update 
+    if @user.update(user_params) 
+      redirect_to user_url, notice: "Profile updated!"
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @user.destroy
+    reset_session
+    redirect_to new_user_path, notice: "Sad to see you go. You can always sign up again."
   end
 
   private

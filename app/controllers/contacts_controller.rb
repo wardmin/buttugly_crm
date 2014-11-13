@@ -3,12 +3,13 @@ class ContactsController < ApplicationController
 	before_action :ensure_logged_in
 
 	def index
-		@contacts = current_user.contacts.all
-		
-		if @contacts.empty?
-			redirect_to new_contact_path
+		@contacts = if params[:search]
+			current_user.contacts.where("LOWER(name) LIKE LOWER (?)", "%#{params[:search]}%")
+		else
+			@contacts = current_user.contacts.all
 		end
 	end
+
 
 	def show	
 	end
@@ -41,7 +42,7 @@ class ContactsController < ApplicationController
 
 	def destroy
 		@contact.destroy
-		redirect_to movies_path
+		redirect_to contacts_path
 	end
 
 	private

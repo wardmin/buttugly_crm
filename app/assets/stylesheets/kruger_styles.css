@@ -1,0 +1,296 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+}
+
+body.bigbody {
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-position: right top;
+	height: 600px;
+
+}
+/* Headlines  */
+
+h1 {
+	margin-left:15px;
+	/*text-transform: capitalize;*/
+	text-align: center;
+	font-style: italic;
+	padding: 5px 20px 5px 5px;
+	font-weight: bolder;
+	font-size: 4em;
+	color: white;
+	background-color: red;
+	transform: rotate(-5deg);
+	width:790px;
+}
+
+header h1 a:link,
+header h1 a:visited {
+	color: white;
+	background-color: red;
+	text-decoration: none;
+
+}
+
+.subhead {
+	/*right: 40px;*/
+	/*top: -320px;*/
+	margin-left: 200px;
+	z-index: 1;
+}
+
+.subhead h1 {
+	transform: rotate(5deg);
+	width: 600px;
+	color: black;
+	background-color: white;
+	-webkit-animation: myfirst 1.5s; /* Chrome, Safari, Opera */
+    animation: myfirst 1s;
+}
+
+@-webkit-keyframes myfirst {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.single_first {
+	font-size: 2em;
+	width: 100%;
+	margin:0;
+	padding: 5px;
+	transform: rotate(0deg);
+	text-align: left;
+
+}
+
+section p {
+	color: white;
+}
+
+section p strong {
+	padding-right: 10px;
+}
+
+.edit_button,
+.edit_button a:link,
+.edit_button a:visited {
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: bolder;
+	font-size: 1.1em;
+	width: 100px;
+	height: 40px;
+	background-color: white;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 7px 0;
+	transform: rotate(0deg);
+	/*position: inherit;*/
+
+}
+.float {
+	position: relative;
+	float: right;
+	left: 50px;
+	top: -59px;
+}
+
+h2 {
+	margin: 15px;
+	text-align: center;
+	font-style: italic;
+	padding: 5px 20px 5px 5px;
+	font-weight: bolder;
+	/*font-size: 2em;*/
+	color: white;
+	background-color: red;
+	transform: rotate(-6deg);
+	width:350px;
+
+}
+
+.top_link a:link,
+.top_link a:visited {
+	/*text-transform: capitalize;*/
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+/* List Styling */
+
+ul.home {
+	width: 200px;
+	font-weight: bold;
+	list-style-type: none;
+	line-height: 4em;
+}
+
+li.main {
+	/*text-transform: capitalize;*/
+	transform: rotate(-7deg);
+	/*color: white;*/
+}
+.main a:link,
+.main a:visited {
+	font-size: 2em;
+	padding:5px 25px;
+	color: white;
+	font-style: italic;
+	background-color: red;
+	text-decoration: none;
+}
+
+/*header .main a:link,
+header .main a:visited {
+	color: black;
+	background-color: white;
+}*/
+
+section {
+	
+	top: -350px;
+	height: auto;
+	border-radius: 2px;
+	background-color: black;
+	/*opacity: 0.6;*/
+	width: 400px;
+	/*line-height: 10px;*/
+	margin-left: 230px;
+	transform: rotate(-3deg);
+	padding: 20px 20px 2px;
+	/*z-index: -1;*/
+}
+
+section ul {
+	margin-top: 0;
+	font-size: 1.47em;
+	font-weight: bolder;
+}
+
+section ul li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	line-height: 2em;
+
+}
+section ul li a:link,
+section ul li a:visited {
+	color: white;
+	text-decoration: none;
+	
+}
+.foot_note {
+	position: fixed;
+	font-size: 0.75em;
+	font-weight: bolder;
+	color: black;
+	background-color: white;
+	transform: rotate(-4deg);
+	top: 600px;
+	width: 270px;
+	margin-left: 70%;
+	padding: 5px;
+
+}
+
+.foot_note a:link,
+.foot_note a:visited {
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	transform: rotate(3deg);
+	padding: 3px;
+}
+
+.error {
+	color: white;
+	line-height: 1.7em;
+
+}
+
+.error a:link,
+.error a:visited {
+	color: white;
+	text-decoration: none;
+	background-color: red;
+	padding: 5px 10px;
+	font-style: italic;
+
+}
+
+/* Form Elements */
+
+form {
+	width: 50%;
+	/*height:400px;*/
+	line-height: 3em;
+	color: white;
+	display: inline-block;
+}
+
+input {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.8em;
+	width: 300px;
+	height: 45px;
+	color: black;
+	border-radius: 5px;
+	border: 6px solid gray;
+	/*display: block;*/
+
+}
+label {
+	margin: 0;
+	font-size: 1.5em;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+fieldset {
+	border: none;
+}
+legend {
+	display: none;
+}
+
+/*.first {
+	margin-top: 30px;
+
+}*/
+
+input:focus {
+	color: black;
+	border: 6px solid red;
+}
+
+::input-placeholder {
+   color: gray;
+}
+
+button {
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: bolder;
+	font-size: 1.5em;
+	width: 150px;
+	height: 40px;
+	background-color: red;
+	color: white;
+	transform: rotate(3deg);
+	border: none;
+	position: relative;
+	top: 20px;
+	left: 160px;
+}

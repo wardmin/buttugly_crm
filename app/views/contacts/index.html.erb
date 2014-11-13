@@ -1,10 +1,21 @@
-<h1><%= current_user.name %>'s Contacts</h1>
+<div class="subhead"><h1><%= current_user.name %>'s Contacts</h1></div>
 
-
-<% @contacts.each do |contact| %>
-	<p><%= link_to contact do %>
-		<strong><%= contact.name %></strong><br />
-	<% end %>
+<%= form_tag contacts_path, method: :get, authentication: false, id: 'search-form' do %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search" %>
 <% end %>
-
-<p>Create a <%= link_to "New Contact", new_contact_path  %></p>
+<section>
+<ul>
+	<% @contacts.each do |contact| %>
+		<li><%= link_to contact do %>
+			<strong><%= contact.name %></strong></li>
+		<% end %>
+	<% end %>
+</ul>
+</section>
+<% if @contacts.empty? %>
+	<p> Looks like you don't have any contacts yet.</p>
+	<p> <%= link_to "Let's go make some.", new_contact_path  %></p>
+<% else %>
+	<p>Create a <%= link_to "New Contact", new_contact_path  %></p>
+<% end %>

@@ -2,11 +2,11 @@
 <html>
 <head>
   <title>CrmApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="bigbody">
 	<% if flash[:notice] %>
 		<p id="alert"><%= flash[:notice] %></p>
 		<hr />
@@ -15,7 +15,7 @@
 		<p id="alert"><%= flash[:alert] %></p>
 		<hr />
 	<% end %>
-	
+<h1> The Butt Ugly CRM</h1>
 
 <%= yield %>
 
@@ -27,5 +27,8 @@
 			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
 		<% end %>
 	</p>
+	<footer>
+	<p class="foot_note">Design inspired by the art of <a href="https://www.google.ca/search?q=barbara+kruger+art">Barbara Kruger</a></p>
+</footer>
 </body>
 </html>

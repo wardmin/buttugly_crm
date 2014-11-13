@@ -1,4 +1,7 @@
 <p><%= link_to "Back", user_path %></p>
 
-<h1>Edit Your Profile</h1>
+<div class="subhead"><h1>Edit Your Profile</h1></div>
+<section>
 <%= render 'form' %>
+</section>
+<p><%= link_to "Delete my Account", user_path, data: {confirm: "Are you sure? This can not be undone."}, method: :delete %></p>

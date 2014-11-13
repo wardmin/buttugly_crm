@@ -1,8 +1,6 @@
-<p><%= link_to edit_contact_path do %>
-	<strong><%= @contact.name %></strong><br />
-	<% end %>
+<h1 class="single_first"><%= @contact.name %></h3><br />
 
-email: <%= @contact.email %><br />
-twitter: <%= @contact.twitter %><br />
-phone: <%= @contact.number %></p>
-notes: <%= @contact.notes %>
+<p class="contact_view">email: <%= @contact.email %></p>
+<p class="contact_view">twitter: <%= @contact.twitter %></p>
+<p class="contact_view">phone: <%= @contact.number %></p>
+<p class="contact_view">notes: <%= @contact.notes %></p>

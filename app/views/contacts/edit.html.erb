@@ -1,3 +1,6 @@
-<p><%= link_to "Back", contacts_path %></p>
-
+<p><%= link_to "Back to Contact", contact_path %></p>
+<p><%= link_to "Delete this Contact", contact_path, data: {confirm: "Are you sure?"}, method: :delete %></p>
+<div class="subhead"><h1>Contact Details</h1></div>
+<section>
 <%= render 'form' %>
+</section>

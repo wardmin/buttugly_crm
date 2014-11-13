@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_secure_password
- 	has_many :contacts
+ 	has_many :contacts, dependent: :destroy
+ 	validates :email, uniqueness: true
 	# attr_accessor :password_confirmation, :password
 	# validates :password, :confirmation => true
 
